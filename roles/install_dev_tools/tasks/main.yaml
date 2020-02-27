@@ -1,0 +1,10 @@
+---
+# Runs all tasks in the install_dev_tools role
+
+- name: Update machine
+  import_task: update.yaml
+
+- name: Install build tools
+  import_task: install_build_tools.yaml
+
+- name: Install text editors
