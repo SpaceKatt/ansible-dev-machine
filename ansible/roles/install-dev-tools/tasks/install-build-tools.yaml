@@ -1,0 +1,16 @@
+---
+# Installs build tools
+
+- name: Install Packages
+  block:
+  - name: Install build packages from apt
+    become: true
+    apt:
+      state: present
+      pkg:
+        - build-essential
+        - automake
+        - cmake
+        - libtool
+        - autoconf
+        - aptitude

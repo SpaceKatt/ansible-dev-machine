@@ -1,0 +1,5 @@
+# Runs all tasks in the install_dev_tools role
+
+- include_tasks: update-machines.yaml
+- include_tasks: install-build-tools.yaml
+- include_tasks: install-text-editors.yaml

@@ -1,0 +1,10 @@
+---
+# Installs text editors
+
+- name: Install text processors
+  apt:
+    state: present
+    pkg:
+      - neovim
+      - python3-neovim
+      - emacs
