@@ -1,0 +1,19 @@
+---
+# Pushes a private key for GitHub access
+
+- name: Copy over pub/priv keys for GitHub
+  block:
+  - name: Copy over private key file
+    copy:
+      src: "{{ lookup('env', 'ANSIBLE_GITHUB_KEY') }}"
+      dest: "{{ ansible_env.PWD }}/.ssh/id_ed25519_github"
+      owner: "{{ ansible_env.SUDO_USER }}"
+      group: "{{ ansible_env.SUDO_USER }}"
+      mode: '0600'
+  - name: Copy over public key file
+    copy:
+      src: "{{ lookup('env', 'ANSIBLE_GITHUB_KEY') }}.pub"
+      dest: "{{ ansible_env.PWD }}/.ssh/id_ed25519_github.pub"
+      owner: "{{ ansible_env.SUDO_USER }}"
+      group: "{{ ansible_env.SUDO_USER }}"
+      mode: '0600'

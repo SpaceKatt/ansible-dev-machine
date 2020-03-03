@@ -1,0 +1,3 @@
+# Distributes keys to the proper place
+
+- include_tasks: github-key.yaml
