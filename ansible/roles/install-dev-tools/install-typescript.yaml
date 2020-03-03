@@ -1,0 +1,31 @@
+---
+# Installs Typescript and common Typescript tools
+
+- name: Install Typescript
+  block:
+  - name: Install Typescript packages from apt
+    apt:
+      state: present
+      pkg:
+        - node
+        - node-typescript
+
+  - name: Install ts-node globally
+    npm:
+      name: ts-node
+      global: yes
+
+  - name: Install typescript-json-schema globally
+    npm:
+      name: typescript-json-schema
+      global: yes
+
+  - name: Install eslint globally
+    npm:
+      name: eslint
+      global: yes
+
+  - name: Install jest globally
+    npm:
+      name: jest
+      global: yes

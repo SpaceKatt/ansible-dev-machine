@@ -3,4 +3,5 @@
 - include_tasks: update-machines.yaml
 - include_tasks: install-build-tools.yaml
 - include_tasks: install-python.yaml
+- include_tasks: install-typescript.yaml
 - include_tasks: install-text-editors.yaml
