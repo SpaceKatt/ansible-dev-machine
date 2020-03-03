@@ -13,8 +13,10 @@
     import_role:
       name: ../roles/install-dev-tools
   
-  #- name: Distribute authentication keys
-    #import_role: ../roles/key-distribution
+  - name: Distribute authentication keys
+    import_role:
+      name: ../roles/key-distribution
   
-  #- name: Configure system and tools
-    #import_role: ../roles/spacekatt-config
+  - name: Configure system and tools
+    import_role:
+      name: ../roles/spacekatt-config

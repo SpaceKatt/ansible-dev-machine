@@ -2,4 +2,4 @@
 # Imports the necessary roles to configure a SpaceKatt flavored dev machine
 
 - name: Set up dev environment for a generic server
-  import_playbook: ./playbooks/setup_server.yaml
+  import_playbook: setup_server.yaml
