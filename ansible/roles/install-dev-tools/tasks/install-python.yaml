@@ -1,2 +1,13 @@
 ---
 # Installs Python and common Python tools
+
+- name: Install Python
+  block:
+  - name: Install python packages from apt
+    become: true
+    apt:
+      state: present
+      pkg:
+        - python3
+        - python3-distutils
+        - python3-venv
