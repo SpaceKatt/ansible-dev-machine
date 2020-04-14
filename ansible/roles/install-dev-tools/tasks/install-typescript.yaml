@@ -7,7 +7,7 @@
     apt:
       state: present
       pkg:
-        - node
+        - nodejs
         - node-typescript
 
   - name: Install ts-node globally
