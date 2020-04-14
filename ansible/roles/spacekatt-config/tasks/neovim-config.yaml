@@ -1,0 +1,32 @@
+---
+# Installs Vundle and configures neovim
+
+- name: Configures neovim
+  block:
+  - name: Download SpaceKatt vim config
+    git:
+      repo: https://github.com/SpaceKatt/vimrc.git
+      dest: "{{ ansible_env.PWD }}/tmpVimDir"
+
+  - name: Move vim config into home
+    copy:
+      src: "{{ ansible_env.PWD }}/tmpVimDir/{{ item }}"
+      dest: "{{ ansible_env.PWD }}/"
+      owner: "{{ ansible_env.SUDO_USER }}"
+      group: "{{ ansible_env.SUDO_GID }}"
+      remote_src: yes
+    with_items:
+      - .git
+      - .vim
+      - .vimrc
+      - .config
+
+  - name: Remove temp vim directory
+    file:
+      path: "{{ ansible_env.PWD }}/tmpVimDir"
+      state: absent
+
+  - name: Setup Vundle
+    git:
+      repo: https://github.com/VundleVim/Vundle.vim.git
+      dest: "{{ ansible_env.PWD }}/.vim/bundle/Vundle.vim"

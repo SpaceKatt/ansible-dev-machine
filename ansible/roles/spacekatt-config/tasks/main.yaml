@@ -1,0 +1,3 @@
+# Installs configurations for dev tools used by SpaceKatt
+
+- include_tasks: neovim-config.yaml
